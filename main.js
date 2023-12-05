@@ -4,45 +4,42 @@ console.log(sum (10,60));
 //---------------------------task2
 function min(a, b) {
     if (a < b) {
-        console.log(`${a} меньше`);
+        return a;
+        
     } else {
-        console.log(`${b} меньше`);
+        return b;
     }
 }
-min(6, 2);
+let resultMin = min(6, 5);
+console.log(resultMin);
 //---------------------------task3
 const pow = (x,n) => x**n;
 console.log(pow (2,5));
 //---------------------------task4
 function check(numb) {
-    if (numb % 2 == 0) {
-        console.log('четное');
+    if (numb % 2 === 0) {
+        return 'четное';
     } else {
-        console.log('нечетное');
+        return 'нечетное';
     }
-    return check;
 }
 let result = check(4081);
+console.log(result); 
 //---------------------------task5
 function componentToHex(c) {
     let hex = c.toString(16);
-    return hex.length == 1 ? "0" + hex : hex;
+    return hex.length === 1 ? "0" + hex : hex;
 }
 
-function rgbToHex(r, g, b) {
-    if (r === undefined || g === undefined || b === undefined) {
-        r = r || 0;
-        g = g || 0;
-        b = b || 0;
-    }
-
-    let hexR = componentToHex(r)
-    let hexG = componentToHex(g)
-    let hexB = componentToHex(b)
+function rgbToHex(r = 0, g = 0, b = 0) {
+    let hexR = componentToHex(r);
+    let hexG = componentToHex(g);
+    let hexB = componentToHex(b);
     return "#" + hexR + hexG + hexB;
 }
-console.log(rgbToHex(23,0,119));
-console.log(rgbToHex(23,134));
+
+console.log(rgbToHex(23, 0, 119)); 
+console.log(rgbToHex(23, 134));
 //---------------------------task6
 function squareNumber(num) {
     return num**2;
